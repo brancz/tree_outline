@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/flower-pot/tree_outline.svg?branch=master)](https://travis-ci.org/flower-pot/tree_outline)
+[![Test Coverage](https://codeclimate.com/github/flower-pot/tree_outline/badges/coverage.svg)](https://codeclimate.com/github/flower-pot/tree_outline/coverage)
+[![Code Climate](https://codeclimate.com/github/flower-pot/tree_outline/badges/gpa.svg)](https://codeclimate.com/github/flower-pot/tree_outline)
+
 # TreeOutline
 
 Use TreeOutline to stringify trees. It uses characters from the extended ASCII

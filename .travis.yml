@@ -1,3 +1,11 @@
 language: ruby
 rvm:
-  - 2.2.2
+- 2.2.2
+deploy:
+  provider: rubygems
+  api_key:
+    secure: ypr3m3B8Tr4IQNa7hqydWdB0Iu1lgjAxU8rtpze9yd0u6+q48GF0jdlwnIQ/po2pQDOc/O7uourXgTjp8g8zkZCgdDsvMzV1pAiRt5TlXeSAkBWL81033Sjo9CkMzeGxspekCx8JrjxjH7EhtUqe/OiX8PfYS1lUYCCQTryahcpTUdYJ0BK14X0Z9j4Z/qmvRe35oeoMVZ0K06O1GCdGfZmeKp9IoKxkZKj5df6oU3K5EQkauNVgar8MYzxvxfoJtSBnPs4LO1ruYaGdMaHfTI7xpPpzUlLCZdeEBjmnNmLG8tmSurl8NKQJuSY7hQCWtNMlGG/JZaMmdAgwJKZkK9wzh7ZlR/ItsVBFzNapMRTLPTNghwtNW29ceE1CPNdJJ93xZC02jf8GCux1+OOVhBtlLlgeDYVNO0i0p++11Q6gtgg6ToYm5xJnpq3+4Pib/s7Hidpka5ej0XOA+OxMxH+Llu++JDNOP41Hg38bgZ/st7G23G4R7rXC74ACsTa8yMPiJ6Cm0BN/vzuYoaiJxUFYPhZDdS6Yi0r+w1HpL2eeBH9gmRfpX6zMOo6+k0Uf4luGFqKoQpdH5+HHH5Vl7e0HjX75EPMhcWXFgoxinLUnp6DSC71MwADc2WQILytsMjFFok4bEnpxlxtoT73V00aMoDFKLnFNC4Ov5+0MHrs=
+  gem: tree_outline
+  on:
+    tags: true
+    repo: flower-pot/tree_outline
