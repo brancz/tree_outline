@@ -8,6 +8,18 @@ class TreeOutline
 
   def initialize(tree)
     @tree = tree
+    @label_method = :to_s
+    @children_method = :children
+  end
+
+  def label_method(method_symbol)
+    @label_method = method_symbol
+    self
+  end
+
+  def children_method(method_symbol)
+    @children_method = method_symbol
+    self
   end
 
   def to_s
@@ -17,11 +29,11 @@ class TreeOutline
   private
 
   def build_lines(node)
-    return [node.to_s] if node.children.empty?
-    result = node.children.map do |c|
+    return [node_label(node)] if node_children(node).empty?
+    result = node_children(node).map do |c|
       build_lines(c)
     end
-    result = [node.to_s] + last_map(result,
+    result = [node_label(node)] + last_map(result,
       ->(block){
         first_map(block, ->(line){ DEFAULT+line }, ->(line){ LINE+line })
       },
@@ -45,5 +57,13 @@ class TreeOutline
     end
     result = result + [last.call(enumerable.last)]
     result
+  end
+
+  def node_label(node)
+    node.public_send @label_method
+  end
+
+  def node_children(node)
+    node.public_send @children_method
   end
 end
