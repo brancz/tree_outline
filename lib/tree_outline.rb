@@ -29,7 +29,7 @@ class TreeOutline
   private
 
   def build_lines(node)
-    return [node_label(node)] if node_children(node).empty?
+    return [node_label(node)] if is_leaf?(node)
     result = node_children(node).map do |c|
       build_lines(c)
     end
@@ -57,6 +57,11 @@ class TreeOutline
     end
     result = result + [last.call(enumerable.last)]
     result
+  end
+
+  def is_leaf?(node)
+    # mind the order of this OR statement, it's important
+    !node.respond_to?(@children_method) || node_children(node).nil? || node_children(node).empty?
   end
 
   def node_label(node)

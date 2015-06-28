@@ -69,4 +69,25 @@ describe TreeOutline do
        └── first".gsub(/^( |\t)+/, "")
     )
   end
+
+  it 'treats a node as a leaf if the node does not have the children method' do
+    node = Struct.new(:label, :children)
+    leaf = Struct.new(:label)
+    tree = node.new('root', [leaf.new('first')])
+
+    expect(TreeOutline.new(tree).label_method(:label).to_s).to eq(
+      "root
+       └── first".gsub(/^( |\t)+/, "")
+    )
+  end
+
+  it 'treats a node as a leaf if the node does not have the children method' do
+    node = Struct.new(:label, :children)
+    tree = node.new('root', [node.new('first', nil)])
+
+    expect(TreeOutline.new(tree).label_method(:label).to_s).to eq(
+      "root
+       └── first".gsub(/^( |\t)+/, "")
+    )
+  end
 end
