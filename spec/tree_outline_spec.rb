@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 describe TreeOutline do
   it 'has a version number' do
     expect(TreeOutline::VERSION).not_to be nil

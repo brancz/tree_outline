@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'tree_outline/version'
 
 class TreeOutline

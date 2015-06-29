@@ -1,6 +1,17 @@
 language: ruby
 rvm:
-- 2.2.2
+  - 2.2.2
+  - jruby-1.7.19
+jdk:
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
+matrix:
+  exclude:
+    - rvm: 2.2.2
+      jdk: oraclejdk7
+    - rvm: 2.2.2
+      jdk: oraclejdk8
 addons:
   code_climate:
     repo_token: 58e8a92216235bcf7808e03c37610985a6524d25ce7ac20aeedd2f8a5c32c797
